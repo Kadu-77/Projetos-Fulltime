@@ -1,11 +1,100 @@
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+    --cor-branco: #ffffff;
+    --cor-verdeescuro: #1b5e20;
+    --cor-cinza: #333;
+    --cor-verdeclaro: #4caf50;
+    --cor-verde: #388e3c;
+    --cor-verdemaisescuro: #2e7d32;
+    --fonte-principal: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-principal);
 }
 
 body {
-
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.menu__links {
-    
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--cor-branco);
+    width: 100%;
+    box-shadow: 0 4px 10px;
+    z-index: 10; 
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--cor-verdeescuro);
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: var(--cor-cinza);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    color: var(--cor-verdeclaro);
+}
+
+.parte__principal {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    padding: 0 20px;
+}
+
+.conteudo__central {
+    text-align: center;
+    max-width: 800px;
+}
+
+.conteudo__central h1{
+    font-size: 3.5rem;
+    color: var(--cor-verdeescuro);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.conteudo__central p{
+    font-family: 1.1rem;
+    color: var(--cor-verde);
+    margin-bottom: 40px;
+}
+
+.botao__catalogo {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    color: var(--cor-branco);
+    background-color: var(--cor-verdeclaro);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.botao__catalogo:hover {
+    background-color: var(--cor-verdemaisescuro);
 }
