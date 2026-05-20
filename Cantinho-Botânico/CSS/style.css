@@ -98,3 +98,28 @@ body {
 .botao__catalogo:hover {
     background-color: var(--cor-verdemaisescuro);
 }
+
+.planta__sala {
+    padding: 0 15px 0 0;
+}
+
+.secundaria {
+    align-items: flex-start;
+}
+
+.secundaria h1{
+    color: var(--cor-verdeescuro);
+    font-size: 3rem;
+    padding: 0 0 15px 70px;
+}
+
+.secundaria p{
+    font-size: 1.875rem;
+    padding: 0 0 15px 0;
+}
+
+.secundaria ul{
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
