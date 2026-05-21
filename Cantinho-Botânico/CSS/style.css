@@ -123,3 +123,7 @@ body {
     display: flex;
     gap: 35px;
 }
+
+strong {
+    color: var(--cor-verdeescuro);
+}
