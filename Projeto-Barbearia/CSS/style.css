@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+    --cor-preto: #0D0D0D;
+    --cor-dourado: #C9A227;
+    --cor-dourado-vibrante: #E6B800;
+    --cor-branco: #F5F5F5;
+    --cor-cinza-escuro: #2B2B2B;
+    --fonte-principal: 'Playfair Display', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-principal);
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1F1F1F 50%, #2B2B2B 100%);
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--cor-preto);
+    width: 100%;
+    box-shadow: 0 4px 10px;
+    z-index: 10; 
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--cor-dourado);
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: var(--cor-branco);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.menu a:hover{
+    color: var(--cor-dourado-vibrante);
+}
+
+.corpo  section{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    color: var(--cor-branco);
+}
+
+.conteudo__central {
+    text-align: center;
+    max-width: 800px;
+}
+
+.conteudo__central h1{
+    font-size: 3.5rem;
+    color: var(--cor-branco);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.conteudo__central p{
+    font-family: 1.rem;
+    color: var(--cor-dourado);
+    margin-bottom: 40px;
+    padding: 25px 0 0 0;
+}
+
+.profissionais {
+  display: flex;
+  flex-direction: column; /* força um embaixo do outro */
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profissionais h2{
+    color: var(--cor-branco);
+    font-size: 1.5rem;
+}
+
+.profissionais ul{
+  list-style: none;
+  font-size: 1.3rem;
+  padding: 12px 0 0 0;
+}
+
+.profissionais a{
+    text-decoration: none;
+    color: var(--cor-dourado);
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.profissionais a:hover{
+    color: var(--cor-dourado-vibrante);
+}
+
+.botoes ul{
+    list-style: none;
+    display: flex;
+    padding: 25px 0 0 0;
+    gap: 35px;
+}
+
+.botoes__decoracao {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    color: var(--cor-branco);
+    background-color: var(--cor-dourado);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.botoes__decoracao:hover {
+    background-color: var(--cor-dourado-vibrante);
+}
+
+.rodape {
+    text-align: center;
+    margin: 5em 3em;
+}
+
+.rodape__texto {
+    margin: 1em 0;
+    color: var(--cor-branco);
+    font-size: 10px;
+}
+
+.texto__destaque {
+    color: var(--cor-dourado-vibrante);
+}
+
+.servicos ul {
+    list-style: none;
+    padding: 30px 20px;
+    margin: 0;
+}
+
+.servicos li {
+    margin-bottom: 20px; /* espaço entre os itens */
+    font-size: 1.3rem;
+    color: var(--cor-branco);
+}
+
