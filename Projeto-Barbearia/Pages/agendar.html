@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>Agendar</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="logo">Agendar</div>
+        <nav class="menu">
+            <ul>
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="servico.html">Serviços</a></li>
+                <li><a href="agendar.html">Agendar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+     <div class="container">
+
+        <form class="form-barbearia">
+
+            <h1 class="titulo-form">
+                Agendamento Barbearia
+            </h1>
+
+            <!-- NOME -->
+            <div class="grupo-form">
+                <label class="label-form" for="nome">
+                    Seu Nome
+                </label>
+
+                <input 
+                    class="input-form"
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome"
+                    required
+                >
+            </div>
+
+            <!-- PROFISSIONAIS -->
+            <div class="grupo-form">
+
+                <h2 class="subtitulo-form">
+                    Escolha o Profissional
+                </h2>
+
+                <div class="opcoes-form">
+
+                    <label class="opcao-radio">
+                        <input 
+                            type="radio" 
+                            name="profissional"
+                            value="Nome 1"
+                            required
+                        >
+                        Carlos
+                    </label>
+
+                    <label class="opcao-radio">
+                        <input 
+                            type="radio" 
+                            name="profissional"
+                            value="Nome 2"
+                        >
+                        Marcos
+                    </label>
+
+                    <label class="opcao-radio">
+                        <input 
+                            type="radio" 
+                            name="profissional"
+                            value="Nome 3"
+                        >
+                        João
+                    </label>
+
+                </div>
+            </div>
+
+            <!-- SERVIÇOS -->
+            <div class="grupo-form">
+
+                <h2 class="subtitulo-form">
+                    Escolha o Serviço
+                </h2>
+
+                <div class="opcoes-form">
+
+                    <label class="opcao-radio">
+                        <input 
+                            type="radio" 
+                            name="servico"
+                            value="Corte"
+                            required
+                        >
+                        Corte - R$ 40
+                    </label>
+
+                    <label class="opcao-radio">
+                        <input 
+                            type="radio" 
+                            name="servico"
+                            value="Barba"
+                        >
+                        Barba - R$ 40
+                    </label>
+
+                    <label class="opcao-radio">
+                        <input 
+                            type="radio" 
+                            name="servico"
+                            value="Corte e Barba"
+                        >
+                        Corte + Barba - R$ 75
+                    </label>
+
+                    <label class="opcao-radio">
+                        <input 
+                            type="radio" 
+                            name="servico"
+                            value="Sobrancelha"
+                        >
+                        Sobrancelha - R$ 15
+                    </label>
+
+                    <label class="opcao-radio">
+                        <input 
+                            type="radio" 
+                            name="servico"
+                            value="Pigmentacao"
+                        >
+                        Corte + Barba + Sobrancelha - R$ 85
+                    </label>
+
+                </div>
+            </div>
+
+            <!-- BOTÃO -->
+            <button class="botao-form" type="submit">
+                Agendar Horário
+            </button>
+
+        </form>
+
+    </div>
+    <!-- DATA E HORA -->
+<div class="grupo-form">
+
+    <h2 class="subtitulo-form">
+        Escolha o Dia e Horário
+    </h2>
+
+    <!-- DATA -->
+    <label class="label-form" for="data">
+        Data
+    </label>
+
+    <input
+        class="input-form"
+        type="date"
+        id="data"
+        name="data"
+        required
+    >
+
+    <!-- HORÁRIO -->
+    <label class="label-form horario-label" for="hora">
+        Horário
+    </label>
+
+    <select
+        class="select-form"
+        id="hora"
+        name="hora"
+        required
+    >
+        <option value="">
+            Selecione um horário
+        </option>
+
+        <option>09:00</option>
+        <option>10:00</option>
+        <option>11:00</option>
+        <option>13:00</option>
+        <option>14:00</option>
+        <option>15:00</option>
+        <option>16:00</option>
+        <option>17:00</option>
+    </select>
+
+</div>
+</main>
+</body>
+<script>
+document.querySelector(".form-barbearia").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const nome = document.getElementById("nome").value;
+    const profissional = document.querySelector("input[name='profissional']:checked").value;
+    const servico = document.querySelector("input[name='servico']:checked").value;
+    const data = document.getElementById("data").value;
+    const hora = document.getElementById("hora").value;
+
+    const agendamento = {
+        nome,
+        profissional,
+        servico,
+        data,
+        hora
+    };
+
+    let lista = JSON.parse(localStorage.getItem("agendamentos")) || [];
+
+    lista.push(agendamento);
+
+    localStorage.setItem("agendamentos", JSON.stringify(lista));
+
+    alert("Agendamento realizado com sucesso!");
+});
+</script>
+</html>
